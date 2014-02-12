@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.sarathdr.plugins.subscriptionmanager"
+    version="1.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <name>SubscriptionManager</name>
+    
+    <description>Auto Renewing Subscription iOS Phonegap Plugins</description>
+    
+    <js-module name="SubscriptionManager" src="www/SubscriptionManager.js">
+        <clobbers target="cordova.SubscriptionManager" />
+    </js-module>
+    
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="SubscriptionManager">
+                <param name="ios-package" value="SubscriptionManager" />
+            </feature>
+        </config-file>
+  
+	<!-- Header and Source files -->
+      
+        <header-file src="src/ios/SubscriptionManager.h" />
+        <source-file src="src/ios/SubscriptionManager.m" />
+        
+        <header-file src="src/ios/Base64.h" />
+        <source-file src="src/ios/Base64.m" />
+
+	<!-- System framework -->
+	<framework src='StoreKit.framework' />
+	
+    </platform>
+    
+</plugin>
